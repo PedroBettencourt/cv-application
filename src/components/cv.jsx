@@ -2,7 +2,7 @@ import "/home/pedro/repos/cv-application/src/styles/cv.css"
 
 function Bio({personalDetails}) {
     return (
-        <div className="personalDetails">
+        <div className="bio">
             <h3>{personalDetails.fullName}</h3>
             <h3>{personalDetails.email}</h3>
             <h3>{personalDetails.phoneNumber}</h3>
@@ -13,39 +13,37 @@ function Bio({personalDetails}) {
 
 function Education({degree}) {
     return (
-        <div className="degree">
-            <h3>{degree.degree}</h3>
-            <h3>{degree.school}</h3>
-            <h3>{degree.startDate}</h3>
-            <h3>{degree.endDate}</h3>
-            <h3>{degree.location}</h3>
+        <div className="education">
+            <h3 id="degree">{degree.degree}</h3>
+            <h3 id="school">{degree.school}</h3>
+            <h3 id="date">{degree.startDate} - {degree.endDate}</h3>
+            <h3 id="location">{degree.location}</h3>
         </div>
     )
 }
 
 function Work({experience}) {
     return (
-        <div className="experience">
-            <h3>{experience.name}</h3>
-            <h3>{experience.title}</h3>
-            <h3>{experience.startDate}</h3>
-            <h3>{experience.endDate}</h3>
-            <h3>{experience.location}</h3>
-            <h3>{experience.description}</h3>
+        <div className="work">
+            <h3 id="name">{experience.name}</h3>
+            <h3 id="title">{experience.title}</h3>
+            <h3 id="date">{experience.startDate} - {experience.endDate}</h3>
+            <h3 id="location">{experience.location}</h3>
+            <h3 id="description">{experience.description}</h3>
         </div>
     )
 }
 
 function Cv({personalDetails, degrees, experiences}) {
     return (
-        <div>
-            <h1>Cv</h1>
-            <h2>Personal Details</h2>
+        <div className="cv">
             <Bio personalDetails={personalDetails}/>
-            <h2>Education</h2>
-            {degrees.map(degree => <Education key={degree.id} degree={degree}/>)}
-            <h2>Work Experience</h2>
-            {experiences.map(experience => <Work key={experience.id} experience={experience} />)}
+            <div className="experience">
+                <h2>Education</h2>
+                {degrees.map(degree => <Education key={degree.id} degree={degree}/>)}
+                <h2>Work Experience</h2>
+                {experiences.map(experience => <Work key={experience.id} experience={experience} />)}
+            </div>
         </div>
     )
 }

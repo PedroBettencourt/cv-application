@@ -71,9 +71,11 @@ function ExperienceForm({experienceFormShow, setExperienceFormShow, experiences,
             <label htmlFor="description"> Description
                 <input type="textarea" id="description" name="description" defaultValue={toEditExperience.description} />
             </label>
-            <button type="submit">Submit</button>
-            <button onClick={handleEdit}>Cancel</button>
-            <button onClick={handleDelete}>Delete</button>
+            <div className="buttons">
+                <button onClick={handleDelete} id="delete">Delete</button>
+                <button onClick={handleEdit} id="cancel">Cancel</button>
+                <button type="submit" id="save">Save</button>
+            </div>
         </form>
     )
 }
@@ -100,18 +102,18 @@ function Work({experiences, setExperiences}) {
         } else {
             return (
                 <>
-                    <button onClick={handleShow}>+ Work</button>
                     <ul>
                         {experiences.map((experience, index) => <li key={experience.id} onClick={() => handleClickExperience(index)}>{experience.name}</li>)}
                     </ul>
+                    <button onClick={handleShow}>+ Experience</button>
                 </>
             )
         }
     }
 
     return (
-        <div>
-            <h1>Work</h1>
+        <div className="form">
+            <h1>Work Experience</h1>
             {renderElement()}
         </div>
     )

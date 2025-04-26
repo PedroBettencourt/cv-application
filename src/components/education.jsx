@@ -65,9 +65,11 @@ function DegreeForm({degreeFormShow, setDegreeFormShow, degrees, setDegrees}) {
             <label htmlFor="location"> Location
                 <input type="text" id="location" name="location" defaultValue={toEditDegree.location} />
             </label>
-            <button type="submit">Submit</button>
-            <button onClick={handleEdit}>Cancel</button>
-            <button onClick={handleDelete}>Delete</button>
+            <div className="buttons">
+            <button onClick={handleDelete} id="delete">Delete</button>
+                <button onClick={handleEdit} id="cancel">Cancel</button>
+                <button type="submit" id="save">Save</button>
+            </div>
         </form>
     )
 }
@@ -94,17 +96,17 @@ function Education({degrees, setDegrees}) {
         } else {
             return (
                 <>
-                    <button onClick={handleShow}>+ Education</button>
                     <ul>
                         {degrees.map((degree, index) => <li key={degree.id} onClick={() => handleClickDegree(index)}>{degree.degree}</li>)}
                     </ul>
+                    <button onClick={handleShow}>+ Education</button>
                 </>
             )
         }
     }
 
     return (
-        <div>
+        <div className="form">
             <h1>Education</h1>
             {renderElement()}
         </div>
