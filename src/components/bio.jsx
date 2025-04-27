@@ -1,5 +1,3 @@
-import "/home/pedro/repos/cv-application/src/styles/bio.css";
-
 function Bio({personalDetails, setPersonalDetails}) {
 
     const onChangeFullName = (e) => {

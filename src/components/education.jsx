@@ -1,5 +1,3 @@
-import "/home/pedro/repos/cv-application/src/styles/education.css"
-
 import { useState } from "react";
 
 function DegreeForm({degreeFormShow, setDegreeFormShow, degrees, setDegrees}) {

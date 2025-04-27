@@ -1,5 +1,3 @@
-import "/home/pedro/repos/cv-application/src/styles/work.css"
-
 import { useState } from "react";
 
 function ExperienceForm({experienceFormShow, setExperienceFormShow, experiences, setExperiences}) {

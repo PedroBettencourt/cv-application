@@ -2,7 +2,6 @@ import Bio from './bio.jsx'
 import Education from './education.jsx';
 import Work from "./work.jsx";
 import Cv from "./cv.jsx"
-import "/home/pedro/repos/cv-application/src/styles/app.css"
 
 import { useState } from 'react';
 

@@ -1,5 +1,3 @@
-import "/home/pedro/repos/cv-application/src/styles/cv.css"
-
 function Bio({personalDetails}) {
     return (
         <div className="bio">
